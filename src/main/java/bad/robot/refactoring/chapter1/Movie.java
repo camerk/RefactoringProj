@@ -47,4 +47,11 @@ public class Movie {
         return amount;
     }
 
+    public int getFreqRenterPoints(int daysRented){
+        if(priceCode == Movie.NEW_RELEASE && daysRented > 1){
+            return 2;
+        }
+        return 1;
+    }
+
 }
