@@ -11,19 +11,19 @@ public class Movie {
 
     public Movie(String title, int priceCode) {
         this.title = title;
-        this.priceCode = priceCode;
+        setPriceCode(priceCode);
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getPriceCode() {
-        return priceCode;
+    private void setPriceCode(int priceCode) {
+        this.priceCode = priceCode;
     }
 
-    public void setPriceCode(int priceCode) {
-        this.priceCode = priceCode;
+    private int getPriceCode(){
+        return priceCode;
     }
 
     public double getCharge(int daysRented){
@@ -48,7 +48,7 @@ public class Movie {
     }
 
     public int getFreqRenterPoints(int daysRented){
-        if(priceCode == Movie.NEW_RELEASE && daysRented > 1){
+        if(getPriceCode() == Movie.NEW_RELEASE && daysRented > 1){
             return 2;
         }
         return 1;
